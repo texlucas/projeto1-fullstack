@@ -6,7 +6,7 @@ Aplicação web desenvolvida em React que consome uma API pública para exibir i
 
 ## 👩‍💻👨‍💻 Participantes do Grupo:
 
-Lucas Silva Teixeira - RA: 2465329
+Lucas Silva Teixeira - RA: 2465329<br>
 Gabriela Rocha Passotto - RA: 
 
 ## 🚀 Funcionalidades
