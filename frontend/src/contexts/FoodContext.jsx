@@ -1,3 +1,4 @@
+// eslint-disable-next-line react-refresh/only-export-components
 import { createContext, useReducer } from "react";
 
 export const FoodContext = createContext();
@@ -17,7 +18,7 @@ function reducer(state, action) {
       return { image: action.payload, loading: false, error: null };
 
     case "FETCH_ERROR":
-      return { ...state, loading: false, error: "Erro ao buscar imagem" };
+      return { image: null, loading: false, error: "Categoria não encontrada. Tente outra." };
 
     default:
       return state;
@@ -27,19 +28,23 @@ function reducer(state, action) {
 export function FoodProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
- const buscarImagem = async (categoria) => {
-  dispatch({ type: "FETCH_START" });
-  console.log(categoria)
+  const buscarImagem = async (categoria) => {
+    dispatch({ type: "FETCH_START" });
 
-  try {
-    const res = await fetch(`https://foodish-api.com/api/images/${categoria}`);
-    const data = await res.json();
+    try {
+      const res = await fetch(`https://foodish-api.com/api/images/${categoria.toLowerCase()}`);
+      const data = await res.json();
 
-    dispatch({ type: "FETCH_SUCCESS", payload: data.image });
-  } catch (err) {
-    dispatch({ type: "FETCH_ERROR" });
-  }
-};
+      if (!res.ok || !data.image) {
+        dispatch({ type: "FETCH_ERROR" });
+        return;
+      }
+
+      dispatch({ type: "FETCH_SUCCESS", payload: data.image });
+    } catch (_err) {
+      dispatch({ type: "FETCH_ERROR" });
+    }
+  };
 
   return (
     <FoodContext.Provider value={{ ...state, buscarImagem }}>
