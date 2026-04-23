@@ -1,26 +1,26 @@
-# 🍔 Buscador de Imagens de Alimentos
+# Buscador de Imagens de Alimentos
 
 Aplicação web desenvolvida em React que consome uma API pública para exibir imagens de comidas. O projeto segue o conceito de SPA (Single Page Application) e utiliza Context API + useReducer para gerenciamento de estado.
 
 ---
 
-## 👩‍💻👨‍💻 Participantes do Grupo:
+## Participantes do Grupo:
 
 Lucas Silva Teixeira - RA: 2465329<br>
-Gabriela Rocha Passotto - RA: 
+Gabriela Rocha Passotto - RA: 2454351
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-- 🔍 Busca de imagens de comidas
-- 🌐 Consumo de API pública (Foodish API)
-- ⚛️ Gerenciamento de estado com useReducer
-- 🔄 Atualização dinâmica sem recarregar a página (SPA)
-- ✅ Validação de input
-- 📦 Organização com Context API
+- Busca de imagens de comidas
+- Consumo de API pública (Foodish API)
+- Gerenciamento de estado com useReducer
+- Atualização dinâmica sem recarregar a página (SPA)
+- Validação de input
+- Organização com Context API
 
 ---
 
-## 🧪 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - React.js
 - Vite
@@ -30,7 +30,7 @@ Gabriela Rocha Passotto - RA:
 
 ---
 
-## 🌐 API utilizada
+## API utilizada
 
 Foodish API  
 https://foodish-api.com/
